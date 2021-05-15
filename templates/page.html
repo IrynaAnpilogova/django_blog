@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="card">
+        <img src="/{{ post.photo }}" class="card-img-top" alt="{{ post.title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">post.content</p>
+
+        </div>
+    </div>
+{% endblock %}

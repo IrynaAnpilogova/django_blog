@@ -1,0 +1,7 @@
+/migrations/
+/migrations
+/migrations/__init__.py
+
+.idea/
+.DS_Store
+__pycache__/
