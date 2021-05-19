@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from blog.views import main_feed
+from blog.views import *
 
 
 
@@ -25,7 +25,7 @@ from blog.views import main_feed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_feed ),
+    path('', main_feed),
     path('blog/', include('blog.urls'))
 
 ]

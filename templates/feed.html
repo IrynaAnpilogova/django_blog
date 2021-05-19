@@ -1,23 +1,34 @@
-{% extends 'index.html'%}
+{% extends 'index.html' %}
+
 
 {% block content %}
 
-    {% for post in posts %}
-                <div class="col-6">
-                    <div class="card shadow-sm">
-                        <img src="/{{ post.photo }}"/>
+    {% for post in page_obj %}
 
-                        <div class="card-body">
-                            <p class="card-text">{{post.title}}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="/blog/post/{{ post.id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
+
+
+        <div class="col-6">
+            <div class="card shadow-sm" >
+                <img  height="290" src="/{{ post.photo }}" />
+                <div class="card-body">
+                    <strong class="d-inline-block mb-2 text-primary">{{ post.category }}</strong>
+                    <h3 class="mb-0">{{ post.title }}</h3>
+                    <div class="mb-1 text-muted">{{ post.date_created|date:"M d, Y" }}</div>
+{#                    <div class="mb-1 text-muted"> {{ post.author }}</div>#}
+{#                    <p class="card-text mb-auto">{{ post.content }}</p> #}
+                    <br>
+                    <a  href="/blog/post/{{ post.id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
                 </div>
+            </div>
+        </div>
+
+
+
+
     {% endfor %}
+    <div class="container">
+        {% include 'pagination.html' %}
+    </div>
 
 {% endblock %}
+
