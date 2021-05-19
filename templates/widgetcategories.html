@@ -1,0 +1,6 @@
+<div class="list-group">
+    {% for item_category in categories %}
+        <a href="/blog/list/?category={{ item_category.id }}"
+           class="list-group-item list-group-item-action">{{ item_category.title }} </a>
+    {% endfor %}
+</div>

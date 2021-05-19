@@ -1,3 +1,4 @@
+{% load blog_widgets %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,15 +35,11 @@
 
             <div class="col-3">
                 <div class="row">
+                    {% get_categories %}
 
-
-                    <div class="list-group">
-                        {% for item_category in categories %}
-                            <a href="/blog/category/{{ item_category.id }}"
-                               class="list-group-item list-group-item-action">{{ item_category.title }} </a>
-                        {% endfor %}
-                    </div>
-
+                </div>
+                 <div class="row">
+                    {% get_last_posts 3 %}
 
                 </div>
             </div>

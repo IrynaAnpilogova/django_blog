@@ -1,0 +1,6 @@
+<h4>Last posts</h4>
+{% for post in posts %}
+    <li>
+        <a href="/blog/post/{{ post.id }}"> {{ post.title }} </a>
+    </li>
+{% endfor %}
