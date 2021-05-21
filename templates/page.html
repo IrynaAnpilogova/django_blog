@@ -10,7 +10,7 @@
             <br>
             <h5 class="card-title">{{ post.title }}</h5>
             <div class="mb-1 text-muted">  <i> by {{ post.author }} </i> </div> <br>
-            <p class="card-text mb-auto">{{ post.content }}</p> <br>
+            <p class="card-text mb-auto">{{ post.content|safe }}</p> <br>
             <hr>
 
 

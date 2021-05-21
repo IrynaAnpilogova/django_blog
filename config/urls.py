@@ -25,8 +25,8 @@ from blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('', main_feed),
-    path('blog/', include('blog.urls'))
-
+    path('blog/', include('blog.urls')),
 ]
 

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from tinymce.models import HTMLField
 
 User = get_user_model()
 # Create your models here.
@@ -26,7 +26,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, verbose_name='Author', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, verbose_name='Category', on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(verbose_name='Title', max_length=200, blank=False, null=False)
-    content = models.TextField(verbose_name='Content', blank=False, null=False)
+    content = HTMLField(verbose_name='Content', blank=False, null=False)
     date_created = models.DateTimeField(verbose_name='Created data', auto_now_add=True)
     date_updated = models.DateTimeField(verbose_name='Updated data', auto_now=True)
     photo = models.ImageField(upload_to='media', null=True, blank=True)
