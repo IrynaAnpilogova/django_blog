@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from tinymce.models import HTMLField
+from django.urls import reverse
 
 User = get_user_model()
 # Create your models here.
@@ -33,7 +34,10 @@ class Post(models.Model):
     is_published = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.title
+        return self.title + ' | ' + str(self.author)
+
+    def get_absolute_url(self):
+        return reverse('get_page', args=[str(self.id)])
 
 class Comment(models.Model):
     class Meta:

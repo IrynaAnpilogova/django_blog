@@ -1,4 +1,4 @@
-{% load blog_widgets %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +24,7 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="/blog/add_post/" class="nav-link">Add Post</a></li>
+            <li class="nav-item"><a href="/blog/post/add_post/" class="nav-link">Add Post</a></li>
             <li class="nav-item"><a href="#" class="nav-link">News</a></li>
         </ul>
     </header>
@@ -32,28 +32,16 @@
 
 <div class="album py-5 bg-light">
     <div class="container">
-        <div class="row">
+    <br/>
+    <h2>Add New Post</h2>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-secondary"> Post</button>
+    </form>
+</div>
 
-            <div class="col-3">
-                <div class="row">
-                    {% get_categories %}
 
-                </div>
-                <br/>
-                 <div class="row">
-                    {% get_last_posts 3 %}
-
-                </div>
-            </div>
-
-            <div class="col-9">
-                <div class="row">
-                    {% block content %} {% endblock %}
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 </div>
 
@@ -72,5 +60,9 @@
 -->
 </body>
 </html>
+
+
+
+
 
 

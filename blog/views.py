@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator
+from django.views.generic import CreateView
+
+
 from django.http import HttpResponse
 # Create your views here.
 from .models import *
+
 
 
 def main_feed(request):
@@ -14,8 +18,10 @@ def main_feed(request):
     paginator = Paginator(posts, 2)  # show 2 posts per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'feed.html',  {
+    return render(request, 'feed.html', {
         'page_obj': page_obj,
+        'posts': posts,
+        'page_number': page_number,
     })
 
 
@@ -26,23 +32,10 @@ def get_post(request, post_id):
     })
 
 
-# def get_category(request, category_id):
-#     posts = Post.objects.filter(category_id=category_id)  # all -> filte
-#     paginator = Paginator(posts, 2)  # show 2 posts per page
-#     page_number = request.GET.get('page')
-#     page_obj = paginator.get_page(page_number)
-#
-#     return render(request, 'feed.html', {
-#         'posts': posts,
-#         'page_obj': page_obj,
-#
-#     })
-
-
-
-
-
-
+class AddPostView(CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    fields = '__all__'
 
 
 

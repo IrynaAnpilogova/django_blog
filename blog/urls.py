@@ -1,13 +1,11 @@
 
 from django.urls import path
-from blog.views import *
+from blog.views import main_feed, get_post, AddPostView
 
 
 urlpatterns = [
-    path('list/', main_feed),
-    path('post/<int:post_id>/', get_post),
-    # path('category/<int:category_id>/', get_category, name='category'),
-
-
+    path('list/', main_feed, name='home'),
+    path('post/<int:post_id>/', get_post, name='get_page'),
+    path('add_post/', AddPostView.as_view(), name='add_post'),
 
 ]

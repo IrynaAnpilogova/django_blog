@@ -1,7 +1,6 @@
 from django import template
 from blog.models import Category, Post
-from datetime import datetime, date
-
+from datetime import date
 
 register = template.Library()
 
@@ -12,8 +11,6 @@ def get_categories():
 
 @register.inclusion_tag('widgetlastposts.html')
 def get_last_posts(max_items=5):
-    dt_now = datetime.now()
-    filter_date = datetime(dt_now.year, dt_now.month, dt_now.day)
     posts = Post.objects.filter(date_created__gte=date.today())[0:max_items]
     return {'posts': posts}
 

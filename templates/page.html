@@ -9,11 +9,20 @@
             <br>
             <br>
             <h5 class="card-title">{{ post.title }}</h5>
-            <div class="mb-1 text-muted">  <i> by {{ post.author }} </i> </div> <br>
-            <p class="card-text mb-auto">{{ post.content|safe }}</p> <br>
+            <div class="mb-1 text-muted"><i> by {{ post.author }} </i></div>
+            <br/>
+            <p class="card-text mb-auto">{{ post.content|safe }}</p>
+            <br/>
+            <div>
+                <a href="/blog/list/" class="btn btn-outline-secondary"> Back </a>
+            </div>
             <hr>
 
 
         </div>
+
+
     </div>
+
+
 {% endblock %}

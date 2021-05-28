@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import *
+from .models import Post, Comment, Category, TagsPost, Tag
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'author', 'category', 'date_created', 'date_updated', 'is_published', 'photo')
