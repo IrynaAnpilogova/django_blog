@@ -8,13 +8,15 @@
             <div class="mb-1 text-muted">{{ post.date_created|date:"M d, Y" }}</div>
             <br>
             <br>
-            <h5 class="card-title">{{ post.title }}</h5>
-            <div class="mb-1 text-muted"><i> by {{ post.author }} </i></div>
+            <h5 class="card-title">{{ post.title }}
+            </h5>
+            <div class="mb-1 text-muted"><i> by {{ post.author }}  </i></div>
             <br/>
-            <p class="card-text mb-auto">{{ post.content|safe }}</p>
+            <p class="card-text mb-auto">{{ post.content|safe }} - <small> <a href="{% url 'update_post' post.pk %}" class="link-secondary" >(Edit)</a> </small>
+            <small> <a href="{% url 'delete_post' post.pk %}" class="link-danger">(Delete)</a> </small></p>
             <br/>
             <div>
-                <a href="/blog/list/" class="btn btn-outline-secondary"> Back </a>
+                <a href="/blog/list/" class="btn btn-outline-secondary"> Home </a>
             </div>
             <hr>
 

@@ -32,14 +32,16 @@
 <div class="album py-5 bg-light">
     <div class="container">
         <br/>
-        <h2>Add Post...</h2>
+        <h2>Delete Post</h2>
         <br/><br/>
+        <h3>Delete: {{ post.title }} </h3>
         <div class-="form-group">
             <form method="POST" class="post-form">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <br/>
-                <button type="submit" class="btn btn-outline-secondary"> Post</button>
+                <br><br/>
+                <strong> Are you sure? </strong>
+                <br><br/>
+                <button type="submit" class="btn btn-outline-secondary">Delete Post! </button>
             </form>
             </form>
         </div>

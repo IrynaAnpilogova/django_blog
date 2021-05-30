@@ -4,15 +4,15 @@
     {% for post in page_obj %}
 
         <div class="col-6">
-            <div class="card shadow-sm" a >
+            <div class="card h-100 shadow-sm"  >
                 <img  height="290" src="/{{ post.photo }}" />
-                <div class="card-body"  >
+                <div class="card-body" >
                     <strong class="d-inline-block mb-2 text-primary">{{ post.category }}</strong>
 
                     <h3 class="mb-0">{{ post.title }}</h3>
                     <div class="mb-1 text-muted">{{ post.date_created|date:"M d, Y" }}</div>
                     <br/>
-                    <a  href="/blog/post/{{ post.id }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a  href="/blog/post/{{ post.id }}" type="button" class="btn btn-sm btn-outline-secondary ">View</a>
                 </div>
             </div>
         </div>

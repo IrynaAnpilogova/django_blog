@@ -32,14 +32,14 @@
 <div class="album py-5 bg-light">
     <div class="container">
         <br/>
-        <h2>Add Post...</h2>
+        <h2>Update Post...</h2>
         <br/><br/>
         <div class-="form-group">
             <form method="POST" class="post-form">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <br/>
-                <button type="submit" class="btn btn-outline-secondary"> Post</button>
+                <button type="submit" class="btn btn-outline-secondary">Update</button>
             </form>
             </form>
         </div>

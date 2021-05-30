@@ -37,7 +37,7 @@ class Post(models.Model):
         return self.title + ' | ' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse('get_page', args=[str(self.id)])
+        return reverse('home')  # return reverse('post', args=[str(self.id)])
 
 class Comment(models.Model):
     class Meta:
